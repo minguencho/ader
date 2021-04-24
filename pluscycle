@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main(void) {
+  int n ,a , sum , count=0;
+  scanf("%d",&n);
+  sum=n;
+  
+  a=sum/10+sum%10;
+  
+  sum= (sum%10)*10+a%10;
+  
+  count++;
+
+while(sum !=n){
+  a=sum/10+sum%10;
+  sum=(sum%10)*10+a%10;
+  count++;
+  }
+  printf("%d",count);
+}
