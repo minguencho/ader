@@ -1,0 +1,47 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main(void) {
+
+	int amount = 0, num = 0, value = 0, sum = 0, count = 0;
+	float avr = 0, high = 0;
+	int arr[1000] = { 0, };
+
+	scanf("%d", &amount); // 배열의 크기 정하기
+
+	for (int i = 0; i < amount; i++) {
+
+		scanf("%d", &num); //학생 수
+
+		for (int i = 0; i < num; i++) {
+
+			scanf("%d", &value);
+			arr[i] = value; //학생의 성적
+			sum += value; //배열에 있는 값 더하기
+
+		}
+
+		avr = (float)sum / num; // 평균
+
+
+		for (int i = 0; i < num; i++) { // 평균보다 높은 학생
+
+			if (arr[i] > avr) {
+
+				count = count + 1;
+
+			}
+		}
+
+		high = (float)count / num;	//평균 보다 높은 학생의 비율
+
+		printf("%.3f%%\n", high * 100); //소수점 셋째자리까지 출력
+
+		num = 0, sum = 0, count = 0; // 초기화
+		avr = 0; high = 0;
+
+		int arr[1000] = { 0, };
+
+	}
+
+
+}
