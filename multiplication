@@ -4,13 +4,13 @@
 int main(void)
 {
 	int x,y;
-	scanf("%d", &x);
+	scanf("%d", &x); //두 수를 입력받음.
 	scanf("%d", &y);
 	
 	
-	printf("  %d\n", (y % 10)*x);
-	printf(" %d\n", ((y % 100) / 10) * x);
-	printf("%d\n", (y / 100) * x);
-	printf("%d",x*y);
+	printf("  %d\n", (y % 10)*x);		//x와 y의 1의 자리수를 곱함
+	printf(" %d\n", ((y % 100) / 10) * x); //x와 y의 10의 자리수를 곱함
+	printf("%d\n", (y / 100) * x);		//x와 y의 100의 자리수를 곱함
+	printf("%d",x*y);			//x와 y의 곱한 값.
 	return 0;
 }
