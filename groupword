@@ -1,0 +1,48 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+int main() {							
+	int x = 0;
+	int line;
+	int num = 0;
+
+	scanf("%d", &x);				//입력 받을 단어 개수
+
+	for (int i = 0; i < x; i++) {	//연속헤서 나타나는 단어를 찾는 반복문
+		int sum = 0;
+		char word[100];
+		char group;
+		int count[26] = { 0, };
+
+		scanf("%s", word);			// 단어를 입력받음
+		line = strlen(word);		// 문자열 길이 반환
+		group = word[0];
+		for (int j = 0; j < line; j++) { //받은 단어와 그룹 단어가 일치하면 1 일치하지 않으면 카운터 증가
+
+			if (word[j] == group) {
+				count[word[j] - 'a'] = 1;
+				continue;
+
+			}
+			else {
+				count[word[j] - 'a']++;
+			}
+
+			group = word[j];
+		}
+
+		for (int i = 0; i < 26; i++) { //sum을 증가시키는 반복문
+			if (count[i] > 1) {
+				sum++;
+			}
+
+		}
+
+		if (sum == 0) { // sum이 0이면 num을 증가시킴
+			num++;
+		}
+
+	}
+	printf("%d", num);
+
+}
